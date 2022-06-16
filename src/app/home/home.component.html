@@ -1,0 +1,46 @@
+<div class="container mx-auto shadow p-3 mt-5 mb-5">
+  <h2 class="text-danger">My Name is {{ fullName }}</h2>
+  <p [id]="id" [style.color]="fontColor">
+    You can set my color in the component!
+  </p>
+  <!-- <button
+    type="button"
+    class="btn btn-success mb-4 me-4 d-block"
+    [disabled]="canClick"
+    (click)="addsServer()"
+    >
+    Add Server
+  </button> -->
+  <!-- <ng-template #noClick>
+    *ngIf="canClick; else noClick"
+    <p>You cannot access the button</p>
+  </ng-template> -->
+
+  <input type="text" [(ngModel)]="name" class="mb-3" />
+  <p class="ms-3 d-inline">{{ name }}</p>
+
+  <!-- <input
+    type="text"
+    class="form-control w-50 mt-4"
+    (input)="onUpdateName($event)"
+  />
+  <p>{{ name }}</p> -->
+
+  <div>
+    <!-- <async-promise-pipe></async-promise-pipe> -->
+    <async-observable-pipe></async-observable-pipe>
+    <hr>
+    <button class="btn btn-success" (click)="onActivate()">Activated</button>
+  </div>
+
+  <div>
+    <!-- <app-server *ngFor="let server of servers"></app-server> -->
+    <app-servers></app-servers>
+    <!-- <app-user></app-user> -->
+    <!-- <div class="row">
+      <li>Name: {{ usr.name }}</li>
+      <li>Age: {{ usr.age }}</li>
+      <li>JoinDate: {{ usr.joinDate | date }}</li>
+    </div> -->
+  </div>
+</div>

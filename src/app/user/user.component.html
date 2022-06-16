@@ -1,0 +1,7 @@
+<div class="container">
+  <ul *ngFor="let userItem of user">
+    <li>Name: {{ userItem.name }}</li>
+    <li>Age: {{ userItem.age }}</li>
+    <li>JoinDate: {{ userItem.joinDate | date:'mediumDate' | uppercase }}</li>
+  </ul>
+</div>

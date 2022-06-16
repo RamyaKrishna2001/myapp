@@ -1,0 +1,5 @@
+.list-group-item {
+    background-color: rgba(57, 237, 177, 0.34);
+    display: flex;
+    justify-content: space-between;
+  }

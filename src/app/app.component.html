@@ -1,0 +1,41 @@
+<h1>Parent Component</h1>
+<button class="btn btn-success" (click)="toggleChild()">Add Child</button>
+<router-outlet></router-outlet>
+<app-practice
+  *ngIf="isCalled"
+  [fromParent]="sendMsgToChild"
+  (fromChild)="recieveMessage($event)"
+></app-practice>
+<p>{{ recievedMesage }}</p>
+
+<div>
+  <!-- <app-home *ngFor="let userItem of user" [usr]="userItem"></app-home> -->
+  <!-- <app-home></app-home> -->
+  <!-- <table class="table table-success mx-auto p-5 text-center">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>userName</th>
+        <th>name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr>
+        <td>
+          {{ user.id }}
+        </td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <!-- <div class="container mt-5">
+    <ul *ngFor="let data of asyncResult" class="shadow p-5">
+      <li>Id: {{ data.id }}</li>
+      <li>Title: {{ data.title | shorten:10 }}</li>
+    </ul>
+  </div> -->
+</div>

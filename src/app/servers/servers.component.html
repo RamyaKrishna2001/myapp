@@ -1,0 +1,42 @@
+<div>
+  <button
+    type="button"
+    (click)="onAddServer()"
+    class="btn btn-primary me-3 mb-1"
+  >
+    Add server
+  </button>
+  <input
+    type="text"
+    class="form-control w-25 mt-4 d-inline"
+    [(ngModel)]="filteredStatus"
+  />
+  <br /><br />
+  <!-- <h3>App Status : {{ appStatus | async }}</h3> -->
+  <p *ngIf="activatedMsg">Activated</p>
+  <hr />
+  <h2
+    class="text-danger"
+    *ngIf="filteredStatus !== 'servers.status' && filteredStatus !== ''"
+  >
+    No Item Matched
+  </h2>
+
+  <ul class="list-group w-50">
+    <li
+      class="list-group-item"
+      *ngFor="let server of servers | filter: filteredStatus:'status'"
+    >
+      <div>
+        <strong>{{ server.name | shorten: 10 }}</strong> |
+        {{ server.instanceType | uppercase }} |
+        {{ server.started | date: "mediumDate" }}
+      </div>
+      <span
+        class="ms-5 rounded-pill px-2"
+        [ngClass]="getStatusClasses(server)"
+        >{{ server.status }}</span
+      >
+    </li>
+  </ul>
+</div>

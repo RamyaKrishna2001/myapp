@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  column-gap: 5rem;
+}
+
+ul {
+  list-style: none;
+}
+
+

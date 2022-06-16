@@ -1,0 +1,12 @@
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ online: serverStatus === 'online' }"
+>
+  server with Id {{ serverId }} is {{ serverStatus }}
+</p>
+
+<button class="btn btn-primary" (click)="onEditClick()">Edit</button>
+<p *ngIf="canEdit; else notEdited">{{ message }}</p>
+<ng-template #notEdited>
+  <p>{{ message }}</p>
+</ng-template>
